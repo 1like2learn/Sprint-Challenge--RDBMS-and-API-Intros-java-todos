@@ -68,25 +68,33 @@ public class UserServiceImpl implements UserService
     @Override
     public User save(User user)
     {
+        //create a new user to tack stuff onto in a controlled manner
         User newUser = new User();
 
+        //tack stuff on
         newUser.setUsername(user.getUsername()
             .toLowerCase());
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
+        //make sure there are no random todos in our new user
         newUser.getTodos().clear();
+        //loop through todos in the passed in user
         for( Todos t: user.getTodos()){
 
+            //create a new todos to tack stuff onto
             Todos newTodo = new Todos();
 
+            //tack stuff on
             newTodo.setDescription(t.getDescription());
             newTodo.setUser(newUser);
 
+            //add that new todos to our new user
             newUser.getTodos().add(newTodo);
         }
 
+        //save the user and return it
         return userrepos.save(newUser);
     }
 

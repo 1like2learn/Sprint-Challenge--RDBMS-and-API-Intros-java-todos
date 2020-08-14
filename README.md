@@ -1756,14 +1756,14 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Start with the provided todo application
-- [ ] Push commits: `git push origin <firstName-lastName>`
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Start with the provided todo application
+- [x] Push commits: `git push origin <firstName-lastName>`
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
@@ -1781,15 +1781,15 @@ You will be creating a REST api service to store and read data from an H2 databa
   - All tables must have the standard 4 auditing fields in place and working, being populated: created on, created by, last modified on, last modified by. The auditing usernames will all default to `llama`.
   - USERS have a one to many relationship with TODOS.
 
-- [/] SeedData.java is a sample class that can be modified to populate the database. However, this is the seed data to use for this application. The structure can change, the data should not change. Do populate the database with this data.
+- [x] SeedData.java is a sample class that can be modified to populate the database. However, this is the seed data to use for this application. The structure can change, the data should not change. Do populate the database with this data.
 
 The following end points are already available in the initial application. You are to make sure the end points work with the newly added todos table
 
-- [/] GET /users/users - return all of the users and their todos.
+- [x] GET /users/users - return all of the users and their todos.
 
-- [/] GET /users/user/{userid} - return the user and their todos based off of user id.
+- [x] GET /users/user/{userid} - return the user and their todos based off of user id.
 
-- [/] POST /users/user - adds a user with their todos
+- [x] POST /users/user - adds a user with their todos
 
   You can use the following to test this!
 
@@ -1809,9 +1809,9 @@ The following end points are already available in the initial application. You a
   }
   ```
 
-- [/] PATCH /todos/todo/{todoid} - mark a todo as completed.
+- [x] PATCH /todos/todo/{todoid} - mark a todo as completed.
 
-- [ ] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
+- [x] DELETE /users/user/{userid} - Deletes a user based off of their userid and deletes all their associated todos.
 
 ### Required best practices
 

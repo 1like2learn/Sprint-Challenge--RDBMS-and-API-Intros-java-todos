@@ -4,14 +4,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
+//entity that manages actions with the todos table
 @Entity
 @Table(name = "todos")
 public class Todos extends Auditable{
 
+    /** Fields*/
+    //dims and generate the primary id that we will use to identify objects
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long todoid;
 
+    //dims a relationship between user and todos
+    //many todos to one user
+    //tables are joined on the userid that the two tables share
+    //ignore todos so we don't get an infinite loop
     @ManyToOne()
     @JoinColumn(name = "userid", nullable = false)
     @JsonIgnoreProperties("todos")
@@ -20,6 +27,8 @@ public class Todos extends Auditable{
     private String description;
     private Boolean completed = false;
 
+
+    /** Constructors */
     public Todos() {
     }
 
@@ -30,6 +39,7 @@ public class Todos extends Auditable{
         this.description = description;
     }
 
+    /** Getters and Setters*/
     public long getTodoid() {
         return todoid;
     }

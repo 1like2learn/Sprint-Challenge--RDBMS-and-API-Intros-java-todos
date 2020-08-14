@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "todo")
-public class Todo {
+@Table(name = "todos")
+public class Todos extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long todoid;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "userid", nullable = false)
     @JsonIgnoreProperties("todos")
     private User user;
@@ -20,11 +20,11 @@ public class Todo {
     private String description;
     private Boolean completed = false;
 
-    public Todo() {
+    public Todos() {
     }
 
-    public Todo(
-        com.lambdaschool.todos.models.User user,
+    public Todos(
+        User user,
         String description) {
         this.user = user;
         this.description = description;
